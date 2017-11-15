@@ -1,0 +1,181 @@
+Started GET "/ejercicios" for 127.0.0.1 at 2017-11-15 01:56:16 +0000
+  
+ActiveRecord::NoDatabaseError (FATAL:  database "drag-n-drop_development" does not exist
+):
+  
+activerecord (5.1.4) lib/active_record/connection_adapters/postgresql_adapter.rb:699:in `rescue in connect'
+activerecord (5.1.4) lib/active_record/connection_adapters/postgresql_adapter.rb:695:in `connect'
+activerecord (5.1.4) lib/active_record/connection_adapters/postgresql_adapter.rb:220:in `initialize'
+activerecord (5.1.4) lib/active_record/connection_adapters/postgresql_adapter.rb:38:in `new'
+activerecord (5.1.4) lib/active_record/connection_adapters/postgresql_adapter.rb:38:in `postgresql_connection'
+activerecord (5.1.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:759:in `new_connection'
+activerecord (5.1.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:803:in `checkout_new_connection'
+activerecord (5.1.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:782:in `try_to_checkout_new_connection'
+activerecord (5.1.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:743:in `acquire_connection'
+activerecord (5.1.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:500:in `checkout'
+activerecord (5.1.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:374:in `connection'
+activerecord (5.1.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:931:in `retrieve_connection'
+activerecord (5.1.4) lib/active_record/connection_handling.rb:116:in `retrieve_connection'
+activerecord (5.1.4) lib/active_record/connection_handling.rb:88:in `connection'
+activerecord (5.1.4) lib/active_record/migration.rb:562:in `connection'
+activerecord (5.1.4) lib/active_record/migration.rb:553:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.4) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  [1m[35m (11.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (6.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5233790540117155380)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateEjercicios (20171115014650)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (7.8ms)[0m  [1m[35mCREATE TABLE "ejercicios" ("id" bigserial primary key, "nombre" character varying, "musculo" character varying, "maquina" character varying, "repeticiones" character varying, "series" character varying, "gif" character varying, "dia" character varying, "tiempo" character varying, "peso" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20171115014650"]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2017-11-15 01:57:04.974117"], ["updated_at", "2017-11-15 01:57:04.974117"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(5233790540117155380)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/ejercicios" for 127.0.0.1 at 2017-11-15 01:57:14 +0000
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+SyntaxError (/home/juan/apis/drag-n-drop/app/controllers/concerns/response.rb:7: syntax error, unexpected end-of-input):
+  
+app/controllers/concerns/response.rb:7: syntax error, unexpected end-of-input
+app/controllers/application_controller.rb:4:in `<class:ApplicationController>'
+app/controllers/application_controller.rb:1:in `<top (required)>'
+app/controllers/ejercicios_controller.rb:1:in `<top (required)>'
+Started GET "/ejercicios" for 127.0.0.1 at 2017-11-15 01:58:29 +0000
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+SyntaxError (/home/juan/apis/drag-n-drop/app/controllers/concerns/exception_handler.rb:19: syntax error, unexpected end-of-input):
+  
+app/controllers/concerns/exception_handler.rb:19: syntax error, unexpected end-of-input
+app/controllers/application_controller.rb:5:in `<class:ApplicationController>'
+app/controllers/application_controller.rb:1:in `<top (required)>'
+app/controllers/ejercicios_controller.rb:1:in `<top (required)>'
+Started GET "/ejercicios" for 127.0.0.1 at 2017-11-15 02:00:11 +0000
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by EjerciciosController#index as */*
+  [1m[36mEjercicio Load (1.0ms)[0m  [1m[34mSELECT "ejercicios".* FROM "ejercicios"[0m
+Completed 200 OK in 10ms (Views: 2.5ms | ActiveRecord: 4.1ms)
+
+
+Started POST "/ejercicios" for 127.0.0.1 at 2017-11-15 02:00:35 +0000
+Processing by EjerciciosController#create as JSON
+  Parameters: {"dia"=>"fsd", "ejercicio"=>{"dia"=>"fsd"}}
+Unpermitted parameters: :dia, :ejercicio
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 43ms (ActiveRecord: 10.3ms)
+
+
+  
+NoMethodError (undefined method `dias' for #<Ejercicio:0x007fd6ec4826d0>
+Did you mean?  dia
+               dia?
+               dia=):
+  
+app/controllers/ejercicios_controller.rb:16:in `create'
+Started POST "/ejercicios" for 127.0.0.1 at 2017-11-15 02:00:57 +0000
+Processing by EjerciciosController#create as JSON
+  Parameters: {"dia"=>"lunes", "ejercicio"=>{"dia"=>"lunes"}}
+Unpermitted parameters: :dia, :ejercicio
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.4ms)
+
+
+  
+NoMethodError (undefined method `dias' for #<Ejercicio:0x007fd6ec518d60>
+Did you mean?  dia
+               dia?
+               dia=):
+  
+app/controllers/ejercicios_controller.rb:16:in `create'
+Started POST "/ejercicios" for 127.0.0.1 at 2017-11-15 02:02:02 +0000
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by EjerciciosController#create as JSON
+  Parameters: {"dia"=>"lunes", "ejercicio"=>{"dia"=>"lunes"}}
+Unpermitted parameter: :ejercicio
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 40ms (ActiveRecord: 6.7ms)
+
+
+  
+NoMethodError (undefined method `dias' for #<Ejercicio:0x00000002dfd638>
+Did you mean?  dia
+               dia?
+               dia=):
+  
+app/controllers/ejercicios_controller.rb:16:in `create'
+Started POST "/ejercicios" for 127.0.0.1 at 2017-11-15 02:03:48 +0000
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by EjerciciosController#create as JSON
+  Parameters: {"dia"=>"lunes", "ejercicio"=>{"dia"=>"lunes"}}
+Unpermitted parameter: :ejercicio
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+Completed 422 Unprocessable Entity in 35ms (Views: 0.4ms | ActiveRecord: 8.2ms)
+
+
+Started POST "/ejercicios" for 127.0.0.1 at 2017-11-15 02:04:55 +0000
+Processing by EjerciciosController#create as JSON
+  Parameters: {"nombre"=>"holi", "musculo"=>"holi", "maquina"=>"holi", "repeticion"=>"fdsv", "dia"=>"opecd", "peso"=>"fdsf", "ejercicio"=>{"nombre"=>"holi", "musculo"=>"holi", "maquina"=>"holi", "dia"=>"opecd", "peso"=>"fdsf"}}
+Unpermitted parameters: :repeticion, :ejercicio
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+Completed 422 Unprocessable Entity in 30ms (Views: 0.6ms | ActiveRecord: 8.6ms)
+
+
+Started POST "/ejercicios" for 127.0.0.1 at 2017-11-15 02:05:02 +0000
+Processing by EjerciciosController#create as JSON
+  Parameters: {"nombre"=>"holi", "musculo"=>"holi", "maquina"=>"holi", "repeticion"=>"fdsv", "dia"=>"opecd", "peso"=>"fdsf", "series"=>"fdsaf", "ejercicio"=>{"nombre"=>"holi", "musculo"=>"holi", "maquina"=>"holi", "series"=>"fdsaf", "dia"=>"opecd", "peso"=>"fdsf"}}
+Unpermitted parameters: :repeticion, :ejercicio
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+Completed 422 Unprocessable Entity in 5ms (Views: 0.3ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/ejercicios" for 127.0.0.1 at 2017-11-15 02:05:15 +0000
+Processing by EjerciciosController#create as JSON
+  Parameters: {"nombre"=>"holi", "musculo"=>"holi", "maquina"=>"holi", "repeticiones"=>"fdsv", "dia"=>"opecd", "peso"=>"fdsf", "series"=>"fdsaf", "ejercicio"=>{"nombre"=>"holi", "musculo"=>"holi", "maquina"=>"holi", "repeticiones"=>"fdsv", "series"=>"fdsaf", "dia"=>"opecd", "peso"=>"fdsf"}}
+Unpermitted parameter: :ejercicio
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (3.5ms)[0m  [1m[32mINSERT INTO "ejercicios" ("nombre", "musculo", "maquina", "repeticiones", "series", "dia", "peso", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["nombre", "holi"], ["musculo", "holi"], ["maquina", "holi"], ["repeticiones", "fdsv"], ["series", "fdsaf"], ["dia", "opecd"], ["peso", "fdsf"], ["created_at", "2017-11-15 02:05:15.379621"], ["updated_at", "2017-11-15 02:05:15.379621"]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+Completed 201 Created in 20ms (Views: 1.4ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/ejercicios/1" for 127.0.0.1 at 2017-11-15 02:05:25 +0000
+Processing by EjerciciosController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mEjercicio Load (0.7ms)[0m  [1m[34mSELECT  "ejercicios".* FROM "ejercicios" WHERE "ejercicios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 11ms (Views: 1.1ms | ActiveRecord: 0.9ms)
+
+
